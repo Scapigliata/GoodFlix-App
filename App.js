@@ -1,12 +1,21 @@
 import React from 'react';
-import { StyleSheet, Text, View , TouchableOpacity, Button } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Button } from 'react-native';
+import { createStore, combineReducers } from 'redux'
+import { Provider } from 'react-redux'
+import productsReducer from './screens/store/reducers/product'
+import ShopNavigator from './navigation/ShopNavigator';
+
+const rootReducer = combineReducers({
+  products: productsReducer
+})
+
+const store = createStore(rootReducer)
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>ICHI superCute</Text>
-      <Button onPress={() => console.log('f')} title="GO" />
-    </View>
+    <Provider store={store}>
+      <ShopNavigator />
+    </Provider>
   );
 }
 
