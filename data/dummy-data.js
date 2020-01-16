@@ -1,54 +1,54 @@
-import Product from '../models/product';
+import Movie from '../models/movie';
 
-const PRODUCTS = [
-  new Product(
+const Movies = [
+  new Movie(
     'p1',
     'u1',
-    'Red Shirt',
-    'https://cdn.pixabay.com/photo/2016/10/02/22/17/red-t-shirt-1710578_1280.jpg',
-    'A red t-shirt, perfect for days with non-red weather.',
-    29.99
+    'Joker',
+    'https://pmcvariety.files.wordpress.com/2013/04/joker.jpg?w=720',
+    'The film paints a dark image of reality in Gotham. Throughouot the film there are countless cases of doubling. From the recurance of clowns in cars to Arthur Flecks iterations of banging his head into panes of glass, repetition is something that not only characterizes madness but also continues to permeate throughout the film. Reality seemingly unravels, and as the film progresses his sanity deteriorates, as mirrored in the surrounding.',    
+    '10/10'
   ),
-  new Product(
+  new Movie(
     'p2',
     'u1',
-    'Blue Carpet',
-    'https://images.pexels.com/photos/6292/blue-pattern-texture-macro.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+    'Ad Astra',
+    'https://wallpaperaccess.com/full/1342133.jpg',
     'Fits your red shirt perfectly. To stand on. Not to wear it.',
-    99.99
+    '9/10'
   ),
-  new Product(
+  new Movie(
     'p3',
     'u2',
-    'Coffee Mug',
-    'https://images.pexels.com/photos/160834/coffee-cup-and-saucer-black-coffee-loose-coffee-beans-160834.jpeg?cs=srgb&dl=bean-beans-black-coffee-160834.jpg&fm=jpg',
+    'Us',
+    'https://thoughtcatalog.files.wordpress.com/2019/04/mv5bztlinwjhm2ytndc1mc00ytk1lwe2mgytzme4m2y5oddlnzqzxkeyxkfqcgdeqxvymzy0mte3nzu40._v1_.jpg?w=1895&h=1280&crop=1&resize=1895,1280&quality=95&strip=all',
     'Can also be used for tea!',
-    8.99
+    '9/10'
   ),
-  new Product(
+  new Movie(
     'p4',
     'u3',
-    'The Book - Limited Edition',
-    'https://images.pexels.com/photos/46274/pexels-photo-46274.jpeg?cs=srgb&dl=blur-blurred-book-pages-46274.jpg&fm=jpg',
+    'La Vita e bella',
+    'https://cranforddialogue.com/wp-content/uploads/2018/05/LIFEISBEAUTIFUL_thumb_V1_FINAL_150320_webthumb_640x360_640x360_435875907539.jpg',
     "What the content is? Why would that matter? It's a limited edition!",
-    15.99
+    '10/10'
   ),
-  new Product(
+  new Movie(
     'p5',
     'u3',
-    'PowerBook',
-    'https://get.pxhere.com/photo/laptop-computer-macbook-mac-screen-water-board-keyboard-technology-air-mouse-photo-airport-aircraft-tablet-aviation-office-black-monitor-keys-graphic-hardware-image-pc-exhibition-multimedia-calculator-vector-water-cooling-floppy-disk-phased-out-desktop-computer-netbook-personal-computer-computer-monitor-electronic-device-computer-hardware-display-device-448748.jpg',
+    'Harry Potter and the Philosophers Stone',
+    'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/harry-potter-and-the-chamber-of-secrets-poster-1545148861.jpg',
     'Awesome hardware, crappy keyboard and a hefty price. Buy now before a new one is released!',
-    2299.99
+    '8/10'
   ),
-  new Product(
+  new Movie(
     'p6',
     'u1',
-    'Pen & Paper',
-    'https://cdn.pixabay.com/photo/2015/10/03/02/14/pen-969298_1280.jpg',
+    'Oblivion',
+    'http://insessionfilm.com/wp-content/uploads/2013/02/Oblivion_movie-1024x589.jpg',
     "Can be used for role-playing (not the kind of role-playing you're thinking about...).",
-    5.49
+    '8/10'
   )
 ];
 
-export default PRODUCTS;
+export default Movies;
