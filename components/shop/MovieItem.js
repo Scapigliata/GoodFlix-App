@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -7,38 +7,59 @@ import {
   Button,
   TouchableOpacity,
   TouchableNativeFeedback,
-  Platform
-} from 'react-native'
-import Colors from '../../constants/Colours'
+  Platform,
+} from 'react-native';
+import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
+import Colors from '../../constants/Colours';
 
-// ! Convert to movie list item for goodwatch
-const MovieItem = props => {
-  let TouchableCmp = TouchableOpacity 
+const MovieItem = ({ onViewDetail, image, title, rating, onAddToCart }) => {
+  const [favoriteColor, setFavoriteColor] = useState(false);
+  const [likeColor, setlikeColor] = useState(false);
+
+  let TouchableCmp = TouchableOpacity;
 
   if (Platform.OS === 'android' && Platform.Version >= 21) {
-    TouchableCmp = TouchableNativeFeedback
+    TouchableCmp = TouchableNativeFeedback;
   }
 
-  return <View style={styles.product}>
-    <View style={styles.touchable}>
-      <TouchableCmp onPress={props.onViewDetail} useForeground >
-        <View >
-          <View style={styles.imageContainer}>
-            <Image style={styles.image} source={{ uri: props.image }} />
+  const handleFavIconPress = () => setFavoriteColor(!favoriteColor);
+
+  const handleLikeIconPress = () => setlikeColor(!likeColor);
+
+  return (
+    <View style={styles.product}>
+      <View style={styles.touchable}>
+        <TouchableCmp onPress={onViewDetail} useForeground>
+          <View>
+            <View style={styles.imageContainer}>
+              <Image style={styles.image} source={{ uri: image }} />
+            </View>
+            <View style={styles.content}>
+              <Text style={styles.title}>{title}</Text>
+              <Text style={styles.rating}>{rating}</Text>
+            </View>
+            <View style={styles.buttons}>
+              <TouchableOpacity onPress={handleLikeIconPress}>
+                <MaterialIcon
+                  name="thumb-up"
+                  size={35}
+                  color={likeColor ? Colors.accent : '#D3D3D3'}
+                />
+              </TouchableOpacity>
+              <TouchableOpacity onPress={handleFavIconPress}>
+                <MaterialIcon
+                  name="favorite"
+                  size={35}
+                  color={favoriteColor ? Colors.favourite : '#D3D3D3'}
+                />
+              </TouchableOpacity>
+            </View>
           </View>
-          <View style={styles.content}>
-            <Text style={styles.title}>{props.title}</Text>
-            <Text style={styles.rating}>{props.rating}</Text>
-          </View>
-          <View style={styles.buttons}>
-            <Button color={Colors.primary} title="More" onPress={props.onViewDetail} />
-            <Button color={Colors.primary} title="Favourite" onPress={props.onAddToCart} />
-          </View>
-        </View>
-      </TouchableCmp>
+        </TouchableCmp>
+      </View>
     </View>
-  </View>
-}
+  );
+};
 
 const styles = StyleSheet.create({
   product: {
@@ -54,18 +75,18 @@ const styles = StyleSheet.create({
   },
   touchable: {
     overflow: 'hidden',
-    borderRadius: 10
+    borderRadius: 10,
   },
   imageContainer: {
     width: '100%',
     height: '60%',
     borderTopLeftRadius: 10,
     borderTopRightRadius: 10,
-    overflow: 'hidden'
+    overflow: 'hidden',
   },
   image: {
     width: '100%',
-    height: '100%'
+    height: '100%',
   },
   title: {
     fontSize: 18,
@@ -75,20 +96,20 @@ const styles = StyleSheet.create({
   rating: {
     fontSize: 14,
     color: '#888',
-    fontFamily: 'open-sans'
+    fontFamily: 'open-sans',
   },
   buttons: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
     height: '25%',
-    paddingHorizontal: 20
+    paddingHorizontal: 20,
   },
   content: {
     alignItems: 'center',
     height: '15%',
-    padding: 10
-  }
-})
+    padding: 10,
+  },
+});
 
-export default MovieItem
+export default MovieItem;
