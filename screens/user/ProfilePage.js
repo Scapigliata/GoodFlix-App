@@ -1,14 +1,25 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Image, Text, StyleSheet } from 'react-native';
 
-const ProfilePage = ({ name = 'UserName', email = 'user@email.com', phoneNumber = '0123456789'}) => {
+const ProfilePage = ({
+  name = 'UserName',
+  email = 'user@email.com',
+  phoneNumber = '0123456789',
+}) => {
   return (
-      <View style={styles.product}>
-        <Text style={styles.title}>Profile</Text>
-        <Text style={styles.name}>{name}</Text>
-        <Text style={styles.name}>{email}</Text>
-        <Text style={styles.name}>{phoneNumber}</Text>
+    <View style={styles.product}>
+      <View style={styles.imageContainer}>
+        <Image 
+        source={require('./profile.png')} 
+        resizeMode="contain"
+        style={{height: 300,width: 300}}
+        />
       </View>
+      <Text style={styles.title}>Profile</Text>
+      <Text style={styles.name}>{name}</Text>
+      <Text style={styles.name}>{email}</Text>
+      <Text style={styles.name}>{phoneNumber}</Text>
+    </View>
   );
 };
 
@@ -29,27 +40,25 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   imageContainer: {
-    width: '100%',
-    height: '60%',
-    borderTopLeftRadius: 10,
-    borderTopRightRadius: 10,
-    overflow: 'hidden',
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#fff',
   },
   image: {
-    width: '100%',
-    height: '100%',
+
   },
   title: {
     fontSize: 18,
     fontFamily: 'open-sans-bold',
     marginVertical: 2,
-    textAlign: 'center'
+    textAlign: 'center',
   },
   name: {
     fontSize: 18,
     margin: 10,
     fontFamily: 'open-sans',
-    textAlign: 'center'
+    textAlign: 'center',
   },
   buttons: {
     flexDirection: 'row',
@@ -64,6 +73,5 @@ const styles = StyleSheet.create({
     padding: 10,
   },
 });
-
 
 export default ProfilePage;
