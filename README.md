@@ -2,7 +2,7 @@
 
 ## Landing
 
-![Landing](https://github.com/scapigliata/RN-Example/blob/master/assets/Landing.png?raw=true)
+<img src="https://github.com/scapigliata/RN-Example/blob/master/assets/Landing.png" />
 
 ## Review
 
