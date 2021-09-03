@@ -1,5 +1,7 @@
 # RN-GoodWatch App
 
+React Native App
+
 ## Landing
 
 <img width="300px" src="https://github.com/scapigliata/RN-Example/blob/master/assets/Landing.png" />
