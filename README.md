@@ -2,12 +2,14 @@
 
 ## Landing
 
-[[https://github.com/scapigliata/RN-Example/blob/master/assets/Landing.png|alt=octocat]]
+![alt text](https://github.com/[scapigliata]/[RN-Example]/blob/[master]/Landing.png?raw=true)
 
 ## Review
 
-[[https://github.com/scapigliata/RN-Example/blob/master/assets/Review.png|alt=octocat]]
+![alt text](https://github.com/[scapigliata]/[RN-Example]/blob/[master]/image.jpg?raw=true)
 
 ## Profile
 
-[[https://github.com/scapigliata/RN-Example/blob/master/assets/Profile.png|alt=octocat]]
+![alt text](https://github.com/[scapigliata]/[RN-Example]/blob/[master]/image.jpg?raw=true)
+
+[[https://github.com/scapigliata/RN-Example/blob/master/Profile.png|alt=octocat]]
