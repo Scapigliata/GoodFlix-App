@@ -6,7 +6,7 @@
 
 ## Review
 
-![Review](https://github.com/[scapigliata]/[RN-Example]/blob/[master]/assets/Landing.png?raw=true)
+![Review](https://github.com/scapigliata/RN-Example/blob/master/assets/Landing.png?raw=true)
 
 ## Profile
 
