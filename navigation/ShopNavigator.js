@@ -5,6 +5,7 @@ import { createMaterialBottomTabNavigator } from 'react-navigation-material-bott
 
 import MovieOverViewScreen from '../screens/shop/MovieOverViewScreen';
 import MovieDetailScreen from '../screens/shop/MovieDetailScreen';
+import NewReviewScreen from '../screens/shop/NewReviewScreen';
 import ProfilePage from '../screens/user/ProfilePage';
 import Colors from '../constants/Colours';
 
@@ -28,14 +29,22 @@ const defaultNavigationConfig = {
 const MovieNavigator = createStackNavigator(
   {
     MovieOverview: MovieOverViewScreen,
-    MovieDetail: MovieDetailScreen
+    MovieDetail: MovieDetailScreen,
+    NewReviewScreen: NewReviewScreen,
+  },
+  defaultNavigationConfig
+);
+
+const ReviewNavigator = createStackNavigator(
+  {
+    NewReview: NewReviewScreen,
   },
   defaultNavigationConfig
 );
 
 const ProfileNavigator = createStackNavigator(
   {
-    ProfilePage
+    ProfilePage,
   },
   defaultNavigationConfig
 );
@@ -46,21 +55,27 @@ const AppNavigator = createMaterialBottomTabNavigator(
       screen: MovieNavigator,
       navigationOptions: {
         title: 'Movies',
-        tabBarIcon: ({ tintColor }) => <MaterialIcon name='movie' size={22} color={tintColor} />,
+        tabBarIcon: ({ tintColor }) => (
+          <MaterialIcon name="movie" size={22} color={tintColor} />
+        ),
       },
     },
     Home: {
       screen: MovieNavigator,
       navigationOptions: {
         title: 'Home',
-        tabBarIcon: ({ tintColor }) => <MaterialCommunityIcon name='home' size={22} color={tintColor} />,
+        tabBarIcon: ({ tintColor }) => (
+          <MaterialCommunityIcon name="home" size={22} color={tintColor} />
+        ),
       },
     },
     Profile: {
       screen: ProfileNavigator,
       navigationOptions: {
         title: 'Profile',
-        tabBarIcon: ({ tintColor }) => <MaterialIcon name='person' size={26} color={tintColor} />,
+        tabBarIcon: ({ tintColor }) => (
+          <MaterialIcon name="person" size={26} color={tintColor} />
+        ),
       },
     },
   },
@@ -68,7 +83,7 @@ const AppNavigator = createMaterialBottomTabNavigator(
     activeColor: Colors.accent,
     barStyle: { backgroundColor: '#fff' },
     initialRouteName: 'Home',
-  },
+  }
 );
 
 export default createAppContainer(AppNavigator);
